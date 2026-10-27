@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1793113903 source:c:\users\guilh\documents\faculdade\linguagem de programação\financ\addservice.c
+	<stdio.h>
+
+1793114488 source:c:\users\guilh\documents\faculdade\linguagem de programação\financ\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"AddService.h"
+
+1793113972 c:\users\guilh\documents\faculdade\linguagem de programação\financ\addservice.h
+
