@@ -56,12 +56,12 @@ int main() {
             {
                 case 1:
                     system("cls");
-                    ola();
+                    printf("Registrar transação");
                     break;
 
                 case 2:
                     system("cls");
-                    mundo();
+                    printf("Editar transação");
                     break;
 
                 case 3:
@@ -90,7 +90,7 @@ int main() {
                     break;
 
                 default:
-                    printf("Opcao invalida!\n");
+                    printf("\nOpcao invalida!\n");
                     break;
             }
 
@@ -118,4 +118,3 @@ int main() {
 
     return 0;
 }
-

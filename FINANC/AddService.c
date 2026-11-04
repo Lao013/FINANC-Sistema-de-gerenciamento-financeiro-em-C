@@ -1,12 +1,3 @@
 #include <stdio.h>
+#include "Trnsacao.h"
 
-void ola()
-{
-    printf("Ola");
-}
-
-
-void mundo()
-{
-    printf("Mundo");
-}

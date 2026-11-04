@@ -31,10 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="AddService.c">
+		<Unit filename="RegistrarMovimentacao.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="AddService.h" />
+		<Unit filename="Transacao.h" />
 		<Unit filename="menu.c">
 			<Option compilerVar="CC" />
 		</Unit>

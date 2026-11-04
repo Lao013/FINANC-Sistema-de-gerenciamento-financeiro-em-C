@@ -1,7 +1,10 @@
+#pragma once
 
-#ifndef TRANSACAO_H
-#define TRANSACAO_H
-// Evita que este arquivo seja incluído mais de uma vez durante a compilação.
+typedef enum
+{
+    receita;
+    despesa;
+}
 
 // Define uma estrutura para representar uma transação financeira.
 typedef struct {
@@ -12,5 +15,3 @@ typedef struct {
     char data[11];    // Data da transação no formato DD/MM/AAAA.
 } Transacao;          // Nome do tipo criado pelo typedef.
 
-#endif
-// Finaliza a proteção contra inclusões repetidas.
