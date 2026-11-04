@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "AddService.h"
+#include "../include/init.h"
+
+double saldoAtual = 50.00;
 
 int main() {
 
@@ -76,12 +78,14 @@ int main() {
 
                 case 5:
                     system("cls");
-                    printf("Listar todas as transações\n");
+                    readData();
+                    printf("Saldo atual: %.2f", saldoAtual);
                     break;
 
                 case 6:
                     system("cls");
-                    printf("Consultar saldo\n");
+                    updateData();
+                    printf("Saldo atual: %.2f", saldoAtual);
                     break;
 
                 case 0:
