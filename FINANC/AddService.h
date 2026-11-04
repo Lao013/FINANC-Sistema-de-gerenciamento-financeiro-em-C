@@ -1,2 +1,0 @@
-void ola();
-void mundo();
