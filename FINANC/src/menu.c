@@ -4,8 +4,9 @@
 #include <locale.h>
 #include "../include/init.h"
 #include "../include/telas.h"
+#include "../include/cadastrarTransacao.h"
 
-void menu() {
+int menu() {
 
     setlocale(LC_ALL, "");
     // o programa aceita caracteres da língua portuguesa.
@@ -52,12 +53,14 @@ void menu() {
             entradaInvalida = 1;
 
         }else{
+            while (getchar() != '\n');
 
             switch (opcao)
             {
                 case 1:
                     system("cls");
                     printf("Registrar transação");
+                    cadastrarTransacao(&usrAtual);
                     break;
 
                 case 2:

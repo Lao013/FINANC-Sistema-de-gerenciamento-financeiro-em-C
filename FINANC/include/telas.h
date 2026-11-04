@@ -3,5 +3,5 @@
 
 extern Usuario usrAtual;
 
-void menu();
+int menu();
 void consultSaldo();

@@ -1,11 +1,12 @@
 #pragma once
 
 #include "../include/Transacao.h"
-//#define MAX_MOVIMENTACOES 60
+#define MAX_MOVIMENTACOES 60
 
 typedef struct Usuario
 {
     char nome[60];
     double saldoAtual;
-    //Transacao movimentacoes[MAX_MOVIMENTACOES];
+    Transacao movimentacoes[MAX_MOVIMENTACOES];
+    int qtdMovimentacoes;
 } Usuario;
