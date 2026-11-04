@@ -31,11 +31,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="RegistrarMovimentacao.c">
+		<Unit filename="include/AddService.h" />
+		<Unit filename="include/Transacao.h" />
+		<Unit filename="src/AddService.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Transacao.h" />
-		<Unit filename="menu.c">
+		<Unit filename="src/RegistrarMovimentacao.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

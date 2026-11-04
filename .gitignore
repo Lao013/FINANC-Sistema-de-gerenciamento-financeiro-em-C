@@ -1,0 +1,12 @@
+# Code::Blocks
+*.depend
+*.layout
+
+# Arquivos de compilação
+*.o
+*.obj
+*.exe
+
+# Pastas de compilação
+bin/
+obj/
