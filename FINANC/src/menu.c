@@ -3,10 +3,9 @@
 #include <stdlib.h>
 #include <locale.h>
 #include "../include/init.h"
+#include "../include/telas.h"
 
-double saldoAtual = 50.00;
-
-int main() {
+void menu() {
 
     setlocale(LC_ALL, "");
     // o programa aceita caracteres da língua portuguesa.
@@ -78,14 +77,12 @@ int main() {
 
                 case 5:
                     system("cls");
-                    readData();
-                    printf("Saldo atual: %.2f", saldoAtual);
+                    printf("Saldo atual: %.2f", usrAtual.saldoAtual);
                     break;
 
                 case 6:
                     system("cls");
-                    updateData();
-                    printf("Saldo atual: %.2f", saldoAtual);
+                    consultSaldo();
                     break;
 
                 case 0:

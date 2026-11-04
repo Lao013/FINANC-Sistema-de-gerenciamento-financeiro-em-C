@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include "../include/init.h"
+#include "../include/usuario.h"
 
-void updateData() //atualiza o arquivo com o saldo atual
+
+
+void updateData(const Usuario *usr) //atualiza o arquivo com o saldo atual
 {
     FILE *data = fopen("users/usrdata.bin", "wb");
 
@@ -10,16 +13,14 @@ void updateData() //atualiza o arquivo com o saldo atual
         return 1;
     }
 
-    fwrite(&saldoAtual, sizeof(double), 1, data);
+    fwrite(usr, sizeof(*usr), 1, data);
 
     fclose(data);
-
-    return 0;
 }
 
 
 
-void readData() //atualiza a variavel com o dado que está no arquivo
+void readData(Usuario *usr) //atualiza a variavel com o dado que está no arquivo
 {
     FILE *data = fopen("users/usrdata.bin", "rb");
 
@@ -28,7 +29,7 @@ void readData() //atualiza a variavel com o dado que está no arquivo
         return 1;
     }
 
-    fread(&saldoAtual, sizeof(double), 1, data);
+    fread(usr, sizeof(*usr), 1, data);
 
     fclose(data);
 
