@@ -1,6 +1,7 @@
 # Code::Blocks
 *.depend
 *.layout
+*.save
 
 # Arquivos de compilação
 *.o
