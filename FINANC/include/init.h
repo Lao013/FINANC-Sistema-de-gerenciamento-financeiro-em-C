@@ -1,6 +1,7 @@
 #pragma once
+#include "usuario.h"
 
-extern double saldoAtual;
+extern Usuario usrAtual;
 
-void updateData();
-void readData();
+void updateData(const Usuario *usr);
+void readData(Usuario *usr);
