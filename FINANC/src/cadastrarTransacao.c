@@ -7,23 +7,26 @@
 void cadastrarTransacao(Usuario *usuario){
     int cod, codConf;
 
-    if(usuario->qtdMovimentacoes < MAX_MOVIMENTACOES){
+    if(usuario->qtdMovimentacoes < MAX_MOVIMENTACOES){ //verificar se nao atingiu o maximo de movimentacoes
         printf("\nDigite a descricao da transacao: ");
         fgets(usuario->movimentacoes[usuario->qtdMovimentacoes].desc, 50, stdin);
 
+        //procura o \n na palavra e troca por \0
         usuario->movimentacoes[usuario->qtdMovimentacoes].desc[strcspn(usuario->movimentacoes[usuario->qtdMovimentacoes].desc, "\n")] = '\0';
 
         printf("Tipo de transacao:\n ");
         printf("[0] Receita\n");
         printf("[1] Despesa\n");
         scanf("%d", &cod);
+
+        // Limpa o buffer de entrada, removendo os caracteres restantes até a quebra de linha.
         while (getchar() != '\n');
         switch(cod){
             case 0:
-                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = receita;
+                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = receita;//valor enum
                 break;
             case 1:
-                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = despesa;
+                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = despesa;//valor enum
                 break;
             default:
                 printf("Entrada inválida.");
@@ -33,13 +36,16 @@ void cadastrarTransacao(Usuario *usuario){
 
        printf("Digite o valor da transacao: ");
        scanf("%f", &usuario->movimentacoes[usuario->qtdMovimentacoes].valor);
+       // Limpa o buffer de entrada, removendo os caracteres restantes até a quebra de linha.
        while (getchar() != '\n');
 
        printf("Digite a data da transacao (DD/MM/AAAA): ");
        fgets(usuario->movimentacoes[usuario->qtdMovimentacoes].data, 11, stdin);
 
+       //procura o \n na palavra e troca por \0
        usuario->movimentacoes[usuario->qtdMovimentacoes].data[strcspn(usuario->movimentacoes[usuario->qtdMovimentacoes].data, "\n")] = '\0';
 
+       //adiciona o codigo de forma automatica, usando a posicao no vetor + 1
        usuario->movimentacoes[usuario->qtdMovimentacoes].codigo = usuario->qtdMovimentacoes + 1;
 
        system("cls");
@@ -62,6 +68,7 @@ void cadastrarTransacao(Usuario *usuario){
        printf("+--------------------------------------+\n");
 
        scanf("%d", &codConf);
+       //limpar buffer de entrada
        while (getchar() != '\n');
        if(codConf == 1){
            usuario->qtdMovimentacoes++;
@@ -72,12 +79,6 @@ void cadastrarTransacao(Usuario *usuario){
        }else{
             printf("Opcao invalida.");
        }
-
-
-
-
-
-
 
     }else{
         printf("Máximo de movimentações cadastradas.");
