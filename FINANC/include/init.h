@@ -3,5 +3,5 @@
 
 extern Usuario usrAtual;
 
-void updateData(const Usuario *usr);
-void readData(Usuario *usr);
+int updateData(const Usuario *usr);
+int readData(Usuario *usr);

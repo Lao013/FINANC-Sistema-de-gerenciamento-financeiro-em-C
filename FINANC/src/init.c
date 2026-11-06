@@ -4,7 +4,7 @@
 
 
 
-void updateData(const Usuario *usr) //atualiza o arquivo com o saldo atual
+int updateData(const Usuario *usr) //atualiza o arquivo com o saldo atual
 {
     FILE *data = fopen("users/usrdata.bin", "wb");
 
@@ -16,11 +16,13 @@ void updateData(const Usuario *usr) //atualiza o arquivo com o saldo atual
     fwrite(usr, sizeof(*usr), 1, data);
 
     fclose(data);
+
+    return 0;
 }
 
 
 
-void readData(Usuario *usr) //atualiza a variavel com o dado que está no arquivo
+int readData(Usuario *usr) //atualiza a variavel com o dado que está no arquivo
 {
     FILE *data = fopen("users/usrdata.bin", "rb");
 
