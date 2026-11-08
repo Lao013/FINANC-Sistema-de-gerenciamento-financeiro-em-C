@@ -31,11 +31,28 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="RegistrarMovimentacao.c">
+		<Unit filename="include/Transacao.h" />
+		<Unit filename="include/cadastrarTransacao.h" />
+		<Unit filename="include/init.h" />
+		<Unit filename="include/mostrarTransacoes.h" />
+		<Unit filename="include/telas.h" />
+		<Unit filename="include/usuario.h" />
+		<Unit filename="src/cadastrarTransacao.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Transacao.h" />
-		<Unit filename="menu.c">
+		<Unit filename="src/consultSaldo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/init.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/mostrarTransacoes.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>

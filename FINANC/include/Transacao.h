@@ -2,8 +2,8 @@
 
 typedef enum
 {
-    receita,
-    despesa,
+    RECEITA,
+    DESPESA,
 } tipo;
 
 // Define uma estrutura para representar uma transação financeira.

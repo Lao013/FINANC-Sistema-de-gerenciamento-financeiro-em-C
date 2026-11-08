@@ -1,15 +1,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include "../include/init.h"
 #include "../include/telas.h"
 #include "../include/cadastrarTransacao.h"
+#include "../include/mostrarTransacoes.h"
 
 int menu() {
-
-    setlocale(LC_ALL, "");
-    // o programa aceita caracteres da língua portuguesa.
 
     int opcao;
     int entradaInvalida;
@@ -80,7 +77,7 @@ int menu() {
 
                 case 5:
                     system("cls");
-                    printf("Saldo atual: %.2f", usrAtual.saldoAtual);
+                    mostrarTransacoes(&usrAtual);
                     break;
 
                 case 6:

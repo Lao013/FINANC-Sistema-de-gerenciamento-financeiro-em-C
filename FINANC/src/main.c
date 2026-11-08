@@ -1,4 +1,7 @@
+#pragma once
+
 #include <stdio.h>
+#include <locale.h>
 #include "../include/telas.h"
 #include "../include/init.h"
 #include "../include/usuario.h"
@@ -7,6 +10,10 @@ Usuario usrAtual;
 
 int main()
 {
+    setlocale(LC_ALL, "");
+    // o programa aceita caracteres da língua portuguesa.
+
+
     //carrega as informações do arquivo na memória
     readData(&usrAtual);
 

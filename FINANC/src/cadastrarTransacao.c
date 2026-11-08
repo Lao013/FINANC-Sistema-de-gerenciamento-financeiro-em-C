@@ -1,3 +1,4 @@
+#pragma once
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -10,6 +11,7 @@ void cadastrarTransacao(Usuario *usuario){
     if(usuario->qtdMovimentacoes < MAX_MOVIMENTACOES){ //verificar se nao atingiu o maximo de movimentacoes
         printf("\nDigite a descricao da transacao: ");
         fgets(usuario->movimentacoes[usuario->qtdMovimentacoes].desc, 50, stdin);
+        printf("Desrcição: %s", usuario->movimentacoes[usuario->qtdMovimentacoes].desc);
 
         //procura o \n na palavra e troca por \0
         usuario->movimentacoes[usuario->qtdMovimentacoes].desc[strcspn(usuario->movimentacoes[usuario->qtdMovimentacoes].desc, "\n")] = '\0';
@@ -23,10 +25,10 @@ void cadastrarTransacao(Usuario *usuario){
         while (getchar() != '\n');
         switch(cod){
             case 0:
-                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = receita;//valor enum
+                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = RECEITA;//valor enum
                 break;
             case 1:
-                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = despesa;//valor enum
+                usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao = DESPESA;//valor enum
                 break;
             default:
                 printf("Entrada inválida.");
@@ -57,7 +59,7 @@ void cadastrarTransacao(Usuario *usuario){
        printf("| Descricao: %s\n", usuario->movimentacoes[usuario->qtdMovimentacoes].desc);
 
        printf("| Tipo: %s\n",
-               usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao == receita ? "Receita" : "Despesa");
+               usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao == RECEITA ? "Receita" : "Despesa");
 
        printf("| Valor: R$ %.2f\n", usuario->movimentacoes[usuario->qtdMovimentacoes].valor);
        printf("| Data: %s\n", usuario->movimentacoes[usuario->qtdMovimentacoes].data);
