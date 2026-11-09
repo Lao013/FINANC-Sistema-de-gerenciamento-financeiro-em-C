@@ -4,33 +4,67 @@
 #include "../include/usuario.h"
 #include "../include/cadastrarTransacao.h"
 #include "../include/Transacao.h"
+#include "../include/listarTransacoes.h"
 
 int mostrarTransacoes(Usuario *usr)
 {
-    Transacao transacao = usr->movimentacoes[usr->qtdMovimentacoes - 1];
+    int opcao;
+
+    do{
 
     system("cls");
-    printf("Ultima transação:\n\n");
 
-    printf("Descrição: %s\n", transacao.desc);
-    printf("Valor: %.2f\n", transacao.valor);
+    printf("+--------------------------------------+\n");
+    printf("|        LISTAGEM DE TRANSACOES        |\n");
+    printf("+--------------------------------------+\n");
+    printf("|                                      |\n");
+    printf("|  [1] Listar somente receitas         |\n");
+    printf("|  [2] Listar somente despesas         |\n");
+    printf("|  [3] Listar todas as transacoes      |\n");
+    printf("|                                      |\n");
+    printf("|  [0] Voltar ao menu principal        |\n");
+    printf("+--------------------------------------+\n");
+    printf("|  Escolha uma opção: ");
 
-    switch(transacao.movimentacao)
-    {
-    case RECEITA:
-        printf("Tipo: receita\n");
-        break;
+    if(scanf("%d", &opcao) != 1){
+        printf("Entrada inválida! Digite um número.\n");
 
-    case DESPESA:
-        printf("Tipo: despesa\n");
-        break;
+        while(getchar() != '\n');
+
+        system("pause");
+
+        opcao = -1;
+        continue;
     }
 
-    printf("Data da transação: %s\n", transacao.data);
+    switch(opcao){
+        case 1:
+            system("cls");
+            listarReceitas(usr);
+            system("pause");
+            break;
+        case 2:
+            system("cls");
+            listarDespesas(usr);
+            system("pause");
+            break;
+        case 3:
+            system("cls");
+            listarTodas(usr);
+            system("pause");
+            break;
+        case 0:
+            return 0;
+        default:
+            printf("Opção inválida! Tente novamente.\n");
+            system("pause");
+            break;
 
-    while(getchar() != '\n');
+    }
 
-    menu();
+    }while(opcao != 0);
+
+
 
     return 0;
 }
