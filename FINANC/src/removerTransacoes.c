@@ -46,7 +46,14 @@ int removerTransacoes(Usuario *usr)
             switch (escolha)
             {
             case 's':
-                usr->saldoAtual -= usr->movimentacoes[i].valor;
+                // Atualiza o saldo de acordo com o tipo da transação removida.
+                if (usr->movimentacoes[i].movimentacao == RECEITA) {
+                    usr->saldoAtual -= usr->movimentacoes[i].valor;
+                } else {
+                    usr->saldoAtual += usr->movimentacoes[i].valor;
+                }
+
+                printf("\nSaldo apos remocao: %.2f\n", usr->saldoAtual);
 
                 for(int j = i; j < usr->qtdMovimentacoes; j++){
                     usr->movimentacoes[j] = usr->movimentacoes[j + 1];
@@ -58,7 +65,7 @@ int removerTransacoes(Usuario *usr)
                 break;
 
             case 'n':
-                printf("\n**Açãco cancelada!");
+                printf("\n**Ação cancelada!");
                 Sleep(3000);
                 break;
             }

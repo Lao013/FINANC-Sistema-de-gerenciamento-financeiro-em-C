@@ -40,14 +40,28 @@ void cadastrarTransacao(Usuario *usuario){
        // Limpa o buffer de entrada, removendo os caracteres restantes até a quebra de linha.
        while (getchar() != '\n');
 
+           // Verifica se o valor informado é positivo.
+    if (usuario->movimentacoes[usuario->qtdMovimentacoes].valor <= 0) {
+        printf("Valor invalido! Digite um valor maior que zero.\n");
+        return;
+    }
+
        printf("Digite a data da transacao (DD/MM/AAAA): ");
        fgets(usuario->movimentacoes[usuario->qtdMovimentacoes].data, 11, stdin);
 
        //procura o \n na palavra e troca por \0
        usuario->movimentacoes[usuario->qtdMovimentacoes].data[strcspn(usuario->movimentacoes[usuario->qtdMovimentacoes].data, "\n")] = '\0';
 
-       //adiciona o codigo de forma automatica, usando a posicao no vetor + 1
-       usuario->movimentacoes[usuario->qtdMovimentacoes].codigo = usuario->qtdMovimentacoes + 1;
+       // Encontra o próximo código disponível com base no maior código existente.
+        int proximoCodigo = 1;
+
+        for (int i = 0; i < usuario->qtdMovimentacoes; i++) {
+            if (usuario->movimentacoes[i].codigo >= proximoCodigo) {
+                proximoCodigo = usuario->movimentacoes[i].codigo + 1;
+            }
+        }
+
+        usuario->movimentacoes[usuario->qtdMovimentacoes].codigo = proximoCodigo;
 
        system("cls");
 

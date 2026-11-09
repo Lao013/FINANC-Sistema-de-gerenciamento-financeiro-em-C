@@ -11,3 +11,4 @@ void listarDespesas(Usuario *usr);
 void listarTodas(Usuario *usr);
 void cadastrarTransacao(Usuario *usuario);
 int removerTransacoes(Usuario *usr);
+void editarTransacao(Usuario *usr);
