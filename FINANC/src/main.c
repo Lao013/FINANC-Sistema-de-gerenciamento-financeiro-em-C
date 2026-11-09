@@ -6,6 +6,8 @@
 #include "../include/init.h"
 #include "../include/usuario.h"
 
+extern Usuario cadUsr();
+
 Usuario usrAtual;
 
 int main()
@@ -15,7 +17,9 @@ int main()
 
 
     //carrega as informações do arquivo na memória
-    readData(&usrAtual);
+    if(readData(&usrAtual) != 0){
+        usrAtual = cadUsr();
+    }
 
     //entra no menu
     menu();

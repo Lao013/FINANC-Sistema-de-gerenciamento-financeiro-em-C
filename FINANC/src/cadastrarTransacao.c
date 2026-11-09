@@ -17,8 +17,8 @@ void cadastrarTransacao(Usuario *usuario){
         usuario->movimentacoes[usuario->qtdMovimentacoes].desc[strcspn(usuario->movimentacoes[usuario->qtdMovimentacoes].desc, "\n")] = '\0';
 
         printf("Tipo de transacao:\n ");
-        printf("[0] Receita\n");
-        printf("[1] Despesa\n");
+        printf("  [0] Receita\n");
+        printf("  [1] Despesa\n");
         scanf("%d", &cod);
 
         // Limpa o buffer de entrada, removendo os caracteres restantes até a quebra de linha.

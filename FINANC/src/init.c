@@ -31,7 +31,10 @@ int readData(Usuario *usr) //atualiza a variavel com o dado que está no arquivo
         return 1;
     }
 
-    fread(usr, sizeof(*usr), 1, data);
+    if(fread(usr, sizeof(*usr), 1, data) != 1){
+     fclose(data);
+     return 1;
+    }
 
     fclose(data);
 
