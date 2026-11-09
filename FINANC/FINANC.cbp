@@ -34,6 +34,7 @@
 		<Unit filename="include/Transacao.h" />
 		<Unit filename="include/cadastrarTransacao.h" />
 		<Unit filename="include/init.h" />
+		<Unit filename="include/listarTransacoes.h" />
 		<Unit filename="include/mostrarTransacoes.h" />
 		<Unit filename="include/telas.h" />
 		<Unit filename="include/usuario.h" />
@@ -46,6 +47,9 @@
 		<Unit filename="src/init.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/listarTransacoes.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -55,6 +59,10 @@
 		<Unit filename="src/mostrarTransacoes.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/usuario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="users/usrdata.bin" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

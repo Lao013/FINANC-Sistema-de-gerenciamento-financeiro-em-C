@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include "../include/telas.h"
 #include "../include/usuario.h"
-#include "../include/cadastrarTransacao.h"
-#include "../include/Transacao.h"
-#include "../include/listarTransacoes.h"
 
 int mostrarTransacoes(Usuario *usr)
 {
@@ -24,6 +21,7 @@ int mostrarTransacoes(Usuario *usr)
     printf("|                                      |\n");
     printf("|  [0] Voltar ao menu principal        |\n");
     printf("+--------------------------------------+\n");
+    printf("Quantidade total de transações: %d\n", usr->qtdMovimentacoes);
     printf("|  Escolha uma opção: ");
 
     if(scanf("%d", &opcao) != 1){

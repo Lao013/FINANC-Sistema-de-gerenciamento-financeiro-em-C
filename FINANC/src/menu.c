@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include "../include/init.h"
 #include "../include/telas.h"
-#include "../include/cadastrarTransacao.h"
-#include "../include/mostrarTransacoes.h"
+extern void reboot();
 
 int menu() {
 
@@ -13,6 +12,8 @@ int menu() {
 
     do{
         system("cls");
+
+        printf("Bem vindo de volta %s!\n\n", usrAtual.nome);
         //system clear para Linux, system cls para Windows.
 
         printf("+--------------------------------------+\n");
@@ -22,10 +23,9 @@ int menu() {
         printf("|                                      |\n");
         printf("|  [1] Registrar transação             |\n");
         printf("|  [2] Editar transação                |\n");
-        printf("|  [3] Buscar transação                |\n");
-        printf("|  [4] Excluir transação               |\n");
-        printf("|  [5] Listar todas as transações      |\n");
-        printf("|  [6] Consultar saldo                 |\n");
+        printf("|  [3] Excluir transação               |\n");
+        printf("|  [4] Listar todas as transações      |\n");
+        printf("|  [5] Consultar saldo                 |\n");
         printf("|                                      |\n");
         printf("+--------------------------------------+\n");
         printf("|  [0] Sair do sistema                 |\n");
@@ -56,38 +56,36 @@ int menu() {
             {
                 case 1:
                     system("cls");
-                    printf("Registrar transação");
                     cadastrarTransacao(&usrAtual);
                     break;
 
                 case 2:
                     system("cls");
-                    printf("Editar transação");
+                    editarTransacao(&usrAtual);
                     break;
 
                 case 3:
                     system("cls");
-                    printf("Buscar transação\n");
+                    removerTransacoes(&usrAtual);
                     break;
 
                 case 4:
                     system("cls");
-                    printf("Excluir transação\n");
+                    mostrarTransacoes(&usrAtual);
                     break;
 
                 case 5:
                     system("cls");
-                    mostrarTransacoes(&usrAtual);
-                    break;
-
-                case 6:
-                    system("cls");
-                    consultSaldo();
+                    consultSaldo(&usrAtual);
                     break;
 
                 case 0:
                     system("cls");
                     printf("Saindo do FinanC...");
+                    break;
+
+                case 67:
+                    reboot();
                     break;
 
                 default:

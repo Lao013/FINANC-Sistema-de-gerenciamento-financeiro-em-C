@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/usuario.h"
-#include "../include/Transacao.h"
 
 
 void listarReceitas(Usuario *usr)
@@ -13,8 +12,8 @@ void listarReceitas(Usuario *usr)
     printf("---------RECEITAS--------\n\n");
     for(int i = 0; i < usr->qtdMovimentacoes; i++){
         if(usr->movimentacoes[i].movimentacao == RECEITA){
-            printf("\tDescrição: %s - Valor: %.2f - Data: %s \n", usr->movimentacoes[i].desc,
-                   usr->movimentacoes[i].valor, usr->movimentacoes[i].data);
+            printf("\tDescrição: %s - Valor: %.2f - Data: %s - id: %d\n", usr->movimentacoes[i].desc,
+                   usr->movimentacoes[i].valor, usr->movimentacoes[i].data, usr->movimentacoes[i].codigo);
             totalReceitas +=  usr->movimentacoes[i].valor;
             qtdReceitas ++;
         }
@@ -39,8 +38,8 @@ void listarDespesas(Usuario *usr)
     printf("---------DESPESAS--------\n\n");
     for(int i = 0; i < usr->qtdMovimentacoes; i++){
         if(usr->movimentacoes[i].movimentacao == DESPESA){
-            printf("\tDescrição: %s - Valor: %.2f - Data: %s \n", usr->movimentacoes[i].desc,
-                   usr->movimentacoes[i].valor, usr->movimentacoes[i].data);
+            printf("\tDescrição: %s - Valor: %.2f - Data: %s - id: %d\n", usr->movimentacoes[i].desc,
+                   usr->movimentacoes[i].valor, usr->movimentacoes[i].data , usr->movimentacoes[i].codigo);
             totalDespesas +=  usr->movimentacoes[i].valor;
             qtdDespesas ++;
         }
@@ -73,8 +72,8 @@ void listarTodas(Usuario *usr)
                 printf("\t Tipo: Despesa - ");
                 break;
         }
-        printf("Descrição: %s - Valor: %.2f - Data: %s \n", usr->movimentacoes[i].desc,
-               usr->movimentacoes[i].valor, usr->movimentacoes[i].data);
+        printf("Descrição: %s - Valor: %.2f - Data: %s - id: %d\n", usr->movimentacoes[i].desc,
+               usr->movimentacoes[i].valor, usr->movimentacoes[i].data, usr->movimentacoes[i].codigo);
 
 
     }

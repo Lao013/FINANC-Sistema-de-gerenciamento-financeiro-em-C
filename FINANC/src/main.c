@@ -1,10 +1,10 @@
-#pragma once
-
 #include <stdio.h>
 #include <locale.h>
 #include "../include/telas.h"
 #include "../include/init.h"
 #include "../include/usuario.h"
+
+extern Usuario cadUsr();
 
 Usuario usrAtual;
 
@@ -15,7 +15,9 @@ int main()
 
 
     //carrega as informações do arquivo na memória
-    readData(&usrAtual);
+    if(readData(&usrAtual) != 0){
+        usrAtual = cadUsr();
+    }
 
     //entra no menu
     menu();
