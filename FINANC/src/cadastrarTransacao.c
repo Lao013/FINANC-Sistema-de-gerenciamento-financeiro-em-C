@@ -1,4 +1,3 @@
-#pragma once
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -17,8 +16,8 @@ void cadastrarTransacao(Usuario *usuario){
         usuario->movimentacoes[usuario->qtdMovimentacoes].desc[strcspn(usuario->movimentacoes[usuario->qtdMovimentacoes].desc, "\n")] = '\0';
 
         printf("Tipo de transacao:\n ");
-        printf("[0] Receita\n");
-        printf("[1] Despesa\n");
+        printf("  [0] Receita\n");
+        printf("   [1] Despesa\n");
         scanf("%d", &cod);
 
         // Limpa o buffer de entrada, removendo os caracteres restantes até a quebra de linha.
@@ -73,6 +72,13 @@ void cadastrarTransacao(Usuario *usuario){
        //limpar buffer de entrada
        while (getchar() != '\n');
        if(codConf == 1){
+            if(usuario->movimentacoes[usuario->qtdMovimentacoes].movimentacao == RECEITA){
+            usuario->saldoAtual += usuario->movimentacoes[usuario->qtdMovimentacoes].valor;
+            }
+            else{
+            usuario->saldoAtual -= usuario->movimentacoes[usuario->qtdMovimentacoes].valor;
+            }
+
            usuario->qtdMovimentacoes++;
            printf("Transacao salva com sucesso.");
        }else if(codConf == 0){
@@ -86,6 +92,4 @@ void cadastrarTransacao(Usuario *usuario){
         printf("Máximo de movimentações cadastradas.");
 
     }
-
-
 }

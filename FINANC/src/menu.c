@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include "../include/init.h"
 #include "../include/telas.h"
-#include "../include/cadastrarTransacao.h"
-#include "../include/mostrarTransacoes.h"
+extern void reboot();
 
 int menu() {
 
@@ -13,6 +12,8 @@ int menu() {
 
     do{
         system("cls");
+
+        printf("Bem vindo de volta %s!\n\n", usrAtual.nome);
         //system clear para Linux, system cls para Windows.
 
         printf("+--------------------------------------+\n");
@@ -72,7 +73,7 @@ int menu() {
 
                 case 4:
                     system("cls");
-                    printf("Excluir transação\n");
+                    removerTransacoes(&usrAtual);
                     break;
 
                 case 5:
@@ -82,12 +83,16 @@ int menu() {
 
                 case 6:
                     system("cls");
-                    consultSaldo();
+                    consultSaldo(&usrAtual);
                     break;
 
                 case 0:
                     system("cls");
                     printf("Saindo do FinanC...");
+                    break;
+
+                case 67:
+                    reboot();
                     break;
 
                 default:
