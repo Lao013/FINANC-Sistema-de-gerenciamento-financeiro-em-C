@@ -3,9 +3,9 @@
 #include "../include/telas.h"
 #include "../include/init.h"
 
-void consultSaldo()
+void consultSaldo(Usuario *usr)
 {
     system("cls");
-    printf("Nome: %s", usrAtual.nome);
-    printf("Saldo atual: %.2f", usrAtual.saldoAtual);
+    printf("Nome: %s\n", usr->nome);
+    printf("Saldo atual: %.2f\n\n", usr->saldoAtual);
 }

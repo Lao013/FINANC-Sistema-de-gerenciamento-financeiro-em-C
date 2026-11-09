@@ -14,7 +14,7 @@ Usuario cadUsr()
     system("cls");
 
     printf("Insira o nome de usuário: ");
-    scanf("%s", &usr.nome);
+    scanf("%59s", usr.nome);
 
 
     system("cls");
